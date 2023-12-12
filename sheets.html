@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My site</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="index.html"><img src="img\logo.png" width="70px" height="60px"></a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="index.html" class="w3-bar-item w3-button">index</a>
+      <a href="java.html" class="w3-bar-item w3-button">java</a>
+      <a href="api.html" class="w3-bar-item w3-button">api</a>
+      <a href="chart.html" class="w3-bar-item w3-button">chart</a>
+      <a href="sheets.html" class="w3-bar-item w3-button">sheets</a>
+    </div>
+  </div>
+</div>
+<br>
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+
+    <section class="sec-4">
+        <h1 class="animate">Sheets</h1>
+        <p class="animate">Sheet Examples!</p>
+        <h6>&nbsp;</h6>
+        <div class="animate">
+          <div class="containerlab">
+            <form class="" method="POST" accept-charset="UTF-8" autocomplete="off" name="sheet1"><br>
+              <label for="fname" class="lable">Enter your first name</label>
+              <input type="text" name="first_name" required autocomplete="off"><br>
+              <label for="lname" class="lable">Enter your last name</label>
+              <input type="text" name="last_name" required autocomplete="off"><br>
+              <label for="email" class="lable">Enter email address</label>
+              <input type="email" name="email" required autocomplete="off"><br>
+              
+              <center><button type="submit" class="buttonForm">Submit</button></center><br>
+              <iframe width="1000" height="450" src="https://docs.google.com/spreadsheets/d/1gLbUJA-7zqunRAR2f3yKQEkG6Fq0ruiI8Dj8t-q1yQw/edit#gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+              
+              <a style="font-size: 13px;" href="">Google Sheets</a>
+              <label id="demo"></label>
+          </div>
+          </form>
+    
+        </div>
+        </div><br>
+    
+      </section>
+
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyw1crXRc1FcLQ2HvtZT58-XYTw_SqL-pR_Xf0cm5QSNzkM7WE42pqUwGCS4viG8M2D/exec'
+        const form = document.forms['sheet1']
+    
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => document.getElementById("demo").innerHTML = "<div class='alert alert-primary' role='alert'><b>Thank You for providing the details, We shall get back to you shortly !</b></div>", sheet1.reset())
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>    
+ <hr>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Powered by <a href="index.html" title="W3.CSS" target="_blank" class="w3-hover-text-green">Thada Mulltreepukdee</a></p>
+</footer>
+</body>
+</html>
